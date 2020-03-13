@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class HomeResource {
 
-    Logger logger = LoggerFactory.getLogger(HomeResource.class);
+    private static final Logger logger = LoggerFactory.getLogger(HomeResource.class);
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -62,7 +62,7 @@ public class HomeResource {
         final String jwt = jwtUtil.generateToken(userDetails);
 
         logger.info("Autentication response");
-
+        //return token
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
     }
 }
