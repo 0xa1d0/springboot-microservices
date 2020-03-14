@@ -1,7 +1,6 @@
 package com.microservices.springsecurityjpa.controllers;
 
-import com.microservices.springsecurityjpa.MyUserDetailsService;
-import com.microservices.springsecurityjpa.UserRepository;
+import com.microservices.springsecurityjpa.services.MyUserDetailsService;
 import com.microservices.springsecurityjpa.models.AuthenticationRequest;
 import com.microservices.springsecurityjpa.models.AuthenticationResponse;
 import com.microservices.springsecurityjpa.util.JwtUtil;
@@ -16,9 +15,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class HomeResource {
+public class HomeController {
 
-    private static final Logger logger = LoggerFactory.getLogger(HomeResource.class);
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     @Autowired
     private AuthenticationManager authenticationManager;

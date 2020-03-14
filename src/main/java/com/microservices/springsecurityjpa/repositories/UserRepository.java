@@ -1,4 +1,4 @@
-package com.microservices.springsecurityjpa;
+package com.microservices.springsecurityjpa.repositories;
 
 import com.microservices.springsecurityjpa.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;

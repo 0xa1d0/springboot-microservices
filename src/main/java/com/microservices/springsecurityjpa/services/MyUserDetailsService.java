@@ -1,7 +1,8 @@
-package com.microservices.springsecurityjpa;
+package com.microservices.springsecurityjpa.services;
 
 import com.microservices.springsecurityjpa.models.MyUserDetails;
 import com.microservices.springsecurityjpa.models.User;
+import com.microservices.springsecurityjpa.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,7 +1,6 @@
 package com.microservices.springsecurityjpa.filters;
 
-import com.microservices.springsecurityjpa.MyUserDetailsService;
-import com.microservices.springsecurityjpa.controllers.HomeResource;
+import com.microservices.springsecurityjpa.services.MyUserDetailsService;
 import com.microservices.springsecurityjpa.util.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
