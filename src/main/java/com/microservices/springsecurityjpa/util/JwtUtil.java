@@ -1,6 +1,5 @@
 package com.microservices.springsecurityjpa.util;
 
-import com.microservices.springsecurityjpa.controllers.HomeResource;
 import io.jsonwebtoken.*;
 
 import org.slf4j.Logger;
