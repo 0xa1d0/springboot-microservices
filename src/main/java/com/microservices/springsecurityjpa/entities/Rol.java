@@ -1,4 +1,6 @@
-package com.microservices.springsecurityjpa.models;
+package com.microservices.springsecurityjpa.entities;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -35,6 +37,7 @@ public class Rol {
         this.rol_name = rol_name;
     }
 
+    @JsonBackReference
     public List<User> getUsers() {
         return users;
     }

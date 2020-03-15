@@ -1,4 +1,6 @@
-package com.microservices.springsecurityjpa.models;
+package com.microservices.springsecurityjpa.entities;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -62,6 +64,7 @@ public class Comment {
         this.com_date = com_date;
     }
 
+    @JsonManagedReference
     public User getUser() {
         return user;
     }
@@ -70,6 +73,7 @@ public class Comment {
         this.user = user;
     }
 
+    @JsonManagedReference
     public Post getPost() {
         return post;
     }

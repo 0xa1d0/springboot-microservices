@@ -1,6 +1,6 @@
 package com.microservices.springsecurityjpa.repositories;
 
-import com.microservices.springsecurityjpa.models.Post;
+import com.microservices.springsecurityjpa.entities.Post;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

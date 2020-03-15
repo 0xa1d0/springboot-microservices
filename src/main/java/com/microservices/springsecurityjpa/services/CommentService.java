@@ -1,14 +1,15 @@
 package com.microservices.springsecurityjpa.services;
 
-import com.microservices.springsecurityjpa.models.Comment;
-import com.microservices.springsecurityjpa.models.Post;
+import com.microservices.springsecurityjpa.entities.Comment;
 import com.microservices.springsecurityjpa.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class CommentService {
 
     @Autowired
@@ -21,7 +22,7 @@ public class CommentService {
         return comments;
     }
 
-    public List<Comment> getAllComments(Integer userId){
+    public List<Comment> getAllCommentsByUserId(Integer userId){
         List<Comment> comments = new ArrayList<>();
         commentRepository.findByUserUseId(userId)
                 .forEach(comments::add);
@@ -39,11 +40,4 @@ public class CommentService {
         return commentRepository.findById(id);
     }
 
-    public void addPost(Comment comment){
-        commentRepository.save(comment);
-    }
-
-    public void updatePost(Comment comment){
-        commentRepository.save(comment);
-    }
 }

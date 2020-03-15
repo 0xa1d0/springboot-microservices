@@ -1,4 +1,6 @@
-package com.microservices.springsecurityjpa.models;
+package com.microservices.springsecurityjpa.entities;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -10,7 +12,8 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int pos_id;
+    @Column(name = "pos_id")
+    private int posId;
 
     @Column(nullable = false)
     @NotEmpty
@@ -29,7 +32,7 @@ public class Post {
     private User user;
 
     public Post(int pos_id, @NotEmpty String pos_title, @NotEmpty String pos_text, @NotEmpty Date pos_date, User user) {
-        this.pos_id = pos_id;
+        this.posId = pos_id;
         this.pos_title = pos_title;
         this.pos_text = pos_text;
         this.pos_date = pos_date;
@@ -39,12 +42,12 @@ public class Post {
     public Post() {
     }
 
-    public int getPos_id() {
-        return pos_id;
+    public int getPosId() {
+        return posId;
     }
 
-    public void setPos_id(int pos_id) {
-        this.pos_id = pos_id;
+    public void setPosId(int posId) {
+        this.posId = posId;
     }
 
     public String getPos_title() {
@@ -71,6 +74,7 @@ public class Post {
         this.pos_date = pos_date;
     }
 
+    @JsonManagedReference
     public User getUser() {
         return user;
     }

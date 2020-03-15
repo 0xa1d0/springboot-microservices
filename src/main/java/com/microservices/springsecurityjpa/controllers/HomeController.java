@@ -1,8 +1,8 @@
 package com.microservices.springsecurityjpa.controllers;
 
 import com.microservices.springsecurityjpa.services.MyUserDetailsService;
-import com.microservices.springsecurityjpa.models.AuthenticationRequest;
-import com.microservices.springsecurityjpa.models.AuthenticationResponse;
+import com.microservices.springsecurityjpa.entities.AuthenticationRequest;
+import com.microservices.springsecurityjpa.entities.AuthenticationResponse;
 import com.microservices.springsecurityjpa.util.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,13 +37,13 @@ public class HomeController {
     @GetMapping("/user")
     public String user(){
         logger.info("User method accessed");
-        return("<h1>Welcome User</h1>");
+        return("<h1>User related content only</h1>");
     }
 
     @GetMapping("/admin")
     public String admin(){
         logger.info("Admin method accessed");
-        return("<h1>Welcome Admin</h1>");
+        return("<h1>Admin related content only</h1>");
     }
 
     @RequestMapping(value = "/authenticate", method = RequestMethod.POST)

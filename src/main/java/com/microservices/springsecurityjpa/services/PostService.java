@@ -1,13 +1,15 @@
 package com.microservices.springsecurityjpa.services;
 
-import com.microservices.springsecurityjpa.models.Post;
+import com.microservices.springsecurityjpa.entities.Post;
 import com.microservices.springsecurityjpa.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PostService {
 
     @Autowired
@@ -31,13 +33,4 @@ public class PostService {
         return postRepository.findById(id);
     }
 
-    /*
-    public void addPost(Post post){
-        postRepository.save(post);
-    }
-
-    public void updatePost(Post post){
-        postRepository.save(post);
-    }
-    */
 }

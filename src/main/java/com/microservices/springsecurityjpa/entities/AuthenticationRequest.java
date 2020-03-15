@@ -1,4 +1,4 @@
-package com.microservices.springsecurityjpa.models;
+package com.microservices.springsecurityjpa.entities;
 
 public class AuthenticationRequest {
 

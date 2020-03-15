@@ -1,4 +1,7 @@
-package com.microservices.springsecurityjpa.models;
+package com.microservices.springsecurityjpa.entities;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -10,7 +13,8 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int use_id;
+    @Column(name = "use_id")
+    private int useId;
     @Column(name="use_username", nullable=false)
     @NotEmpty()
     private String userName;
@@ -28,12 +32,12 @@ public class User {
             inverseJoinColumns={@JoinColumn(name="uro_rol_id", referencedColumnName="rol_id")})
     private List<Rol> roles;
 
-    public int getUse_id() {
-        return use_id;
+    public int getUseId() {
+        return useId;
     }
 
-    public void setUse_id(int use_id) {
-        this.use_id = use_id;
+    public void setUseId(int useId) {
+        this.useId = useId;
     }
 
     public String getUserName() {
@@ -60,6 +64,7 @@ public class User {
         this.use_active = use_active;
     }
 
+    @JsonBackReference
     public List<Rol> getRoles() {
         return roles;
     }

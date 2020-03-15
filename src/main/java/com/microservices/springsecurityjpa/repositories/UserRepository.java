@@ -1,6 +1,6 @@
 package com.microservices.springsecurityjpa.repositories;
 
-import com.microservices.springsecurityjpa.models.User;
+import com.microservices.springsecurityjpa.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
